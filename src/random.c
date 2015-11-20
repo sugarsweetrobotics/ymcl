@@ -8,6 +8,7 @@
 #include "random.h"
 #include "random_generator.h"
 
+#define _USE_MATH_DEFINES
 #include <math.h>
 
 static double __q__;
@@ -26,7 +27,7 @@ YMCL_EXPORT real_t random_uniform()
 
 
 YMCL_EXPORT double prob_normal_distribution(const double a, const double sigma) {
-	return /*1 / (sigma * sqrt(2 * M_PI*sigma)) * */ exp(-(a*a / (2 * (sigma * sigma))));
+	return 1 / (sigma * sqrt(2 * M_PI*sigma)) *  exp(-(a*a / (2 * (sigma * sigma))));
 }
 
 

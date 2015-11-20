@@ -6,16 +6,18 @@
 * license: GPLv3
 */
 
+#include <stdint.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+
+
 #define REAL_IS_DOUBLE 1
 	typedef double real_t;
 
-	typedef int bool_t;
-#include <stdint.h>
-
+	typedef int32_t bool_t;
 
 
 #ifndef FALSE
@@ -28,11 +30,11 @@ extern "C" {
 
 #if WIN32
 
-#ifdef _WINDLL
+#ifdef ymcl_EXPORTS
 #define YMCL_EXPORT __declspec(dllexport) // WIN32 && _WINDLL
 
 #else
-#if _YMCL_USE_STATIC
+#ifdef _YMCL_USE_STATIC
 #define YMCL_EXPORT // WIN32 && !_WINDLL && STATIC
 
 #else
