@@ -115,7 +115,7 @@ YMCL_EXPORT bool_t ymcl_cleanup(ymcl_t* ymcl) {
 	return TRUE;
 }
 
-YMCL_EXPORT bool_t ymcl_set_map_pixel(ymcl_t* ymcl, const int x, const int y, const uint8_t value) {
+YMCL_EXPORT bool_t ymcl_set_map_pixel(ymcl_t* ymcl, const int x, const int y, const map_cell_t value) {
 	if (!map_validate_index(&ymcl->map, x, y)) {
 		return FALSE;
 	}
